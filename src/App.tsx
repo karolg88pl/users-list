@@ -21,7 +21,7 @@ const App: React.FC = () => {
           <Styles.Header>Users list</Styles.Header>
           <SearchBox searchText={searchText} setSearchText={setSearchText} />
           {users.length > 0 ?
-              <Styles.ListWrapper>
+              <Styles.ListWrapper data-testid='listWrapper' >
                   {users.filter(user => checkSearchText(user.name, searchText)).map(user => 
                       <UserItem 
                           key={user.id} 
@@ -29,7 +29,7 @@ const App: React.FC = () => {
                           name={user.name} 
                           username={user.username}/>)}
               </Styles.ListWrapper> :
-          <Styles.Loading>Loading...</Styles.Loading>}   
+          <Styles.Loading data-testid='loading' >Loading...</Styles.Loading>}   
       </Styles.Wrapper>
     </div>
   );
